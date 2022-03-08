@@ -27,8 +27,8 @@ jobs:
         run: sudo apt install texlive-base
       - name: Install texlive-latex-extra
         run: sudo apt-get install texlive-latex-extra
-      - name: Install roboto font
-        run: sudo apt-get install fonts-roboto
+      - name: Install texlive-fonts-extra
+        run: sudo apt-get install texlive-fonts-extra
       - name: Build pdf
         run: pdflatex main.tex -o resume.pdf
       - name: Create pull request
