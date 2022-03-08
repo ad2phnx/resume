@@ -30,7 +30,7 @@ jobs:
       - name: Build pdf
         run: pdflatex main.tex -o resume.pdf
       - name: Create pull request
-        uses: main/create-pull-request@v3
+        uses: resume/create-pull-request@v3
         with:
           commit-message: pdflatex build
           branch: pdflatex_build
