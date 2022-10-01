@@ -28,7 +28,7 @@
 %
 %============================================================================%
 
-%we use article class because we want to fully customize the page and dont use a cv template
+%we use article class because we want to fully customize the page and don't use a cv template
 \documentclass[10pt,A4]{article}	
 
 
@@ -38,6 +38,13 @@
 
 %we use utf8 since we want to build from any machine
 \usepackage[utf8]{inputenc}		
+
+%----------------------------------------------------------------------------------------
+%	LINKS	
+%----------------------------------------------------------------------------------------
+
+%Create clickable links from urls
+\usepackage[hidelinks]{hyperref}
 
 %----------------------------------------------------------------------------------------
 %	LOGIC
@@ -93,7 +100,7 @@
 
 %customize entries left, center and right
 \lhead{}
-\chead{ \small{Dinis Anatoliy  $\cdot$ Software Engineer $\cdot$  Tokyo, Japan $\cdot$  \textcolor{sectcol}{\textbf{anatoliy.dinis@gmail.com}}  $\cdot$ +80 070 8489 2958 }}
+\chead{ \small{Dinis Anatoliy  $\cdot$ Applications Engineer $\cdot$  Tokyo, Japan $\cdot$  \textcolor{sectcol}{\textbf{anatoliy.dinis@gmail.com}}  $\cdot$ +81 070 8489 2958 }}
 \rhead{}
 
 
@@ -104,7 +111,7 @@
 %	TABLE /ARRAY DEFINITIONS
 %---------------------------------------------------------------------------------------- 
 
-%for layouting tables
+%for layout-ing tables
 \usepackage{multicol}			
 \usepackage{multirow}
 
@@ -164,10 +171,10 @@
 % remove top header line
 \renewcommand{\headrulewidth}{0pt} 
 
-%remove botttom header line
+%remove bottom header line
 \renewcommand{\footrulewidth}{0pt}	  	
 
-%remove pagenum
+%remove page-num
 \renewcommand{\thepage}{}	
 
 %remove section num		
@@ -177,7 +184,7 @@
 % 	ARROW GRAPHICS in Tikz
 %----------------------------------------------------------------------------------------
 
-% a six pointed arrow poiting to the left
+% a six pointed arrow pointing to the left
 \newcommand{\tzlarrow}{(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;}	
 
 % include the left arrow into a tikz picture
@@ -189,7 +196,7 @@
  \end{tikzpicture}
 }
 
-% a six pointed arrow poiting to the right
+% a six pointed arrow pointing to the right
 \newcommand{\tzrarrow}{ (0,0.2) -- (0.1,0) -- (0.3,0) -- (0.2,0.2) -- (0.3,0.4) -- (0.1,0.4) -- cycle;}
 
 % include the right arrow into a tikz picture
@@ -251,7 +258,10 @@
 \vspace{6pt}
 	\begin{tabular*}{1\textwidth}{p{3cm} p{14.4cm}}
 &		 \larrow{bgcol}  #4\\[3pt]
+\ifx#5\empty
+\else
 &		 \larrow{bgcol}  #5\\[6pt]
+\fi
 	\end{tabular*}
 
 }
@@ -267,14 +277,6 @@
 % CUSTOM STRUT FOR EMPTY BOXES
 %----------------------------------------- -----------------------------------------------
 \newcommand{\mystrut}{\rule[-.3\baselineskip]{0pt}{\baselineskip}}
-
-%----------------------------------------------------------------------------------------
-% CUSTOM LOREM IPSUM
-%----------------------------------------------------------------------------------------
-\newcommand{\lorem}
-{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.}
-
-
 
 %============================================================================%
 %
@@ -332,21 +334,21 @@
 
 \vspace{-114pt}
 
-\metasection{Status:}{B.Sc. Computer Science, Research and Development Engineer}
+\metasection{Status:}{B.Sc. Computer Science, Applications Engineer}
 \metasection{Fields:}{Project Management, Software Development, Research} 
-\metasection{Tech:}{Strix, Unity, Unreal Engine, Java, Kotlin, C\#, C++, Git}
+\metasection{Tech:}{Ruby on Rails, Redis, Jenkins,  Kubernetes, Linux, Kotlin, Java, C\#, C++, Python }
 \metasection{Loves:}{RPGs, Art, Comedy Series, Soccer, Fitness}
 
 \vspace{6pt}
 
 %---------------------------------------------------------------------------------------
-%	SUMMARAY (optional)
+%	SUMMARY (optional)
 %----------------------------------------------------------------------------------------
 
-%\cvsection{Summary}\\
-%I am a digital media graduate (M.Sc.) with project experience in educational research as well as in the private sector. During my studies I focused on e-assessment software and moved over to b2b software for IBM Notes Domino.
+\cvsection{Summary}\\
+I am a Computer Science graduate (B.Sc.) with project experience working on large scale Air Traffic Surveillance Software written mostly in C/C++; with some services and scripts in Java, Bash and Python, running on linux racks during University as well as after. I moved to Japan in 2019 and worked at multiple Japanese companies where I learned to develop for IoT devices, prepare and release phase 2 requirements and features for an automated email distribution system running on K8S, enhance a game engine solution that extends Unity and Unreal Engine with Kotlin and create solution to deploy/test micro-services to K8S with CI/CD.\\
 
-%Currently I develop and evaluate the next generation learning management system with Meteor based on an extensive nursing curriculum for healthcare education.  I also love fitness, martial arts, videogames, news and Sci-Fi series.\\[-2pt]
+Currently I am working on a Ruby on Rails application to upgrade to currently supported versions, fix integration tests and automatically deploy to K8S with a CI/CD pipeline as well as an outsourced Java application that needs to be understood, refactored, fixed and documented.\\[-2pt]
 
 %============================================================================%
 %
@@ -360,29 +362,33 @@
 \cvsection{Experience}
 
 %
-\cvevent{2022 / 01}{Research and Development Engineer}{Softgear Co., Ltd.}{}{}
+\cvevent{2022 / 09}{Applications Engineer}{Rakuten, Inc.}{Working on Ruby on Rails application that needs to Rails and Ruby versions upgraded and automatic deployment/testing on Ci/CD pipeline}{Learning and documenting outsourced Java application and fixing/refactoring logic.}
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2020 / 06 - 2021 / 12}{Software Engineer}{Rakuten, Inc.}{}{}
+\cvevent{2022 / 01 - 2022 / 07}{Research and Development Engineer}{Softgear Co., Ltd.}{Strix Game Engine Research and Development}{Implement new features for micro services for Strix Game Engine with Unity and Unreal Engine as well as work on testing and adding features for outsourced Games created with Strix Engine}
+
+%\textcolor{softcol}{\hrule}
+
+%
+\cvevent{2020 / 06 - 2021 / 12}{Software Engineer}{Rakuten, Inc.}{Phase 2 Features and Refactoring of Automatic Email Distribution System}{Implemented new features with unit, integration and end-to-end tests, deployed to automatic CI/CD and help release on Production}
 
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2019 / 07 - 2020 / 05}{Embedded Software Development}{Jigsaw, Inc.}{}{}
+\cvevent{2019 / 07 - 2020 / 05}{Embedded Software Engineer}{Jigsaw, Inc.}{Managed team to develop libraries for different sensors that connect to Neqto IoT device to collect sensor data and send to cloud}{Converted libraries from Python/C/C++ to Javascript and added features to allow sending data to different cloud platforms like AWS S3, IoT Core, Dropbox, Azure, Salesforce, etc.}
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2018 / 06 - 2019 / 06}{Software Engineer}{SRC, Inc.}{}{}{}
+\cvevent{2018 / 06 - 2019 / 06}{Software Engineer}{SRC, Inc.}{Worked on proprietary simulation software for air trafic control}{Created application to parse large json simulation files and create formatted word document of data as well as maintained and fixed bugs for radar systems integrated with VHDL}
 
 %\textcolor{softcol}{\hrule}
 
-
 %
-\cvevent{2016 / 02 - 2018 / 12}{Software Engineer Co-Op}{Saab Sensis Corporation}{}{}
+\cvevent{2016 / 02 - 2018 / 12}{Software Engineer Co-Op}{Saab Sensis Corporation}{Worked on porting large air traffic services from running on bare metal to KVM}{Built custom rpm packages to automate prepartion of bare metal systems. Project leader in creating Java GUI application set ASTERIX settings. Maintained SNMP agent to monitor MIBs. Restructured, tested and maintained Ruby cookbooks to configure VNC environments and networks on VMs. Maintained and fixed multiliterate time synchronization issues of application to run simulations of air traffic and surveillance hardware.}
 
 
 %---------------------------------------------------------------------------------------
@@ -390,31 +396,66 @@
 %--------------------------------------------------------------------------------------
 \cvsection{Education}
 
-\cvevent{2018 / 05}{Graduated as B.Sc. Computer Science}{Syracuse University}{}{}
+\cvevent{2018 / 05}{Graduated}{Syracuse University}{After returning from Study Abroad}{Graduated with a 3.4 GPA and started working at SRC, Inc. in June 2018.}
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2018 / 01 - 2018 / 05}{Semester Abroad in Osaka, Japan}{Kansai Gaidai University}{}{}
+\cvevent{2018 / 01 - 2018 / 05}{Semester Abroad in Osaka, Japan}{Kansai Gaidai University}{Studied Japanese, Culture, Religion}{Took a semester in Japan because I've always wanted to go to Japan and have been taking Japanese language courses as an elective.}
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2015 - 2017}{B.Sc. Computer Science}{Syracuse University}{}{}
+\cvevent{2015 - 2017}{B.Sc. Computer Science}{Syracuse University}{Dean's Scholarship}{Main languages that were taught at Syracuse were Haskell, Java and C. Studied networking and Android programming. Took Japanese as an elective for 3 semesters.}
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2014 - 2015}{A.Sc. Computer Science}{Onondaga Community College}{}{}
+\cvevent{2014 - 2015}{A.Sc. Computer Science}{Onondaga Community College}{Curriculum Honor Award Computer Science, 2016}{Began learning programming with mostly Java and C++. Took a web development class focused on html and css. Graduated with a 3.7 GPA.}
 
+%---------------------------------------------------------------------------------------
+%	LANGUAGE SECTION
+%--------------------------------------------------------------------------------------
+\cvsection{Language}
+
+%
+\cvevent{English}{Fluent}{United States of America}{Moved to USA in 1990}{Grew up in Upstate New York and went to school in Syracuse from Kindergarten to University}
+
+%\textcolor{softcol}{\hrule}
+
+%
+\cvevent{Japanese}{Intermediate}{University}{Studied Abroad at Kansai Gaidai in 2018 for 1 Semester}{Took 3 semesters of Japanese language classes and am continueing self study}
+
+%\textcolor{softcol}{\hrule}
+
+%
+\cvevent{Ukrainian}{Basic}{Home}{Born in Ukraine in 1987}{Moved to USA at the age of 4 and learned some Ukrainian from home life as well as family members, friends and church.}
+
+%---------------------------------------------------------------------------------------
+%	CONTACT SECTION
+%--------------------------------------------------------------------------------------
+\cvsection{Contact}
+
+%
+\cvevent{GitHub}{\href{https://github.com/ad2Phnx}{github.com/ad2Phnx}}{}{Personal Code Repository}{Projects include linux configurations, code test projects for different positions, personal projects, resume.}
+
+%\textcolor{softcol}{\hrule}
+
+%
+\cvevent{LinkedIn}{\href{https://www.linkedin.com/in/anatoliy-dinis-672563113/}{linkedin.com/in/anatoliy-dinis-672563113}}{}{Work and Education History Profile}{}
+
+%\textcolor{softcol}{\hrule}
+
+%
+\cvevent{CodeWars}{\href{https://www.codewars.com/users/ad2Phnx}{codewars.com/users/ad2Phnx}}{}{Coding Challenges Website}{Member since 2015 with a rank of 3Kyu and honor percentile of 1.34\%Completed over 350 challenges in a a variety of different coding languages such as Ruby, Python, Java, SQL, PHP, Go, etc.}
 
 %-------------------------------------------------------------------------------------------------
-%	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth) 
+%	ARTIFICIAL FOOTER (fancy footer cannot exceed line width) 
 %--------------------------------------------------------------------------------------------------
 
 \null
 \vspace*{\fill}
-\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut \small \textcolor{white}{www.adtwo.net} $\cdot$ \textcolor{white}{github.com/ad2phnx}}}
+\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut \small \textcolor{white}{adtwo.net} $\cdot$ \textcolor{white}{github.com/ad2Phnx}}}
 
 
 
