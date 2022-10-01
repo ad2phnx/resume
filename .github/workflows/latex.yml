@@ -26,7 +26,7 @@ jobs:
       - name: Update apt
         run: sudo apt-get update
       - name: Install texlive
-        run: sudo apt install texlive-full
+        run: sudo apt install texlive-base
       - name: Install texlive-latex-extra
         run: sudo apt-get install texlive-latex-extra
       - name: Install texlive-fonts-extra
