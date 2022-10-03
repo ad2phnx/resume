@@ -33,6 +33,9 @@ jobs:
         run: sudo apt-get install texlive-fonts-extra
       - name: Build pdf
         run: pdflatex main.tex -o doc.pdf
+      - name: Copy file
+        run: |
+          sudo mv doc.pdf pdfjs
       - name: Deploy to gh-pages
         uses: s0/git-publish-subdir-action@develop
         env:
