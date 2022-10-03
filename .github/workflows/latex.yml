@@ -43,7 +43,7 @@ jobs:
           BRANCH: gh-pages
           FOLDER: pdfjs
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MESSAGE: "Depoly resume"
+          MESSAGE: "Deploy resume"
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
