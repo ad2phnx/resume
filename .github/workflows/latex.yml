@@ -23,19 +23,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Update apt
-        run: sudo apt-get update
-      - name: Install texlive
-        run: sudo apt install texlive-base
-      - name: Install texlive-latex-extra
-        run: sudo apt-get install texlive-latex-extra
-      - name: Install texlive-fonts-extra
-        run: sudo apt-get install texlive-fonts-extra
-      - name: Build pdf
-        run: pdflatex main.tex -o doc.pdf
+      - name: Latex compile
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+
       - name: Copy file
         run: |
-          sudo mv doc.pdf pdfjs
+          sudo mv main.pdf pdfjs/doc.pdf
       - name: Deploy to gh-pages
         uses: s0/git-publish-subdir-action@develop
         env:
